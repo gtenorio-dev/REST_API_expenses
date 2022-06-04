@@ -1,0 +1,28 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>12</zoom_level><element><id>UMLClass</id><coordinates><x>576</x><y>348</y><w>324</w><h>228</h></coordinates><panel_attributes>Expense
+--
+- description: String
+- amount: Integer
+- date: Date
+--
++ Expense(String, Integer, PaymentMethod)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>132</x><y>348</y><w>252</w><h>228</h></coordinates><panel_attributes>User
+--
+- name: String
+- lastname: String
+- email: String
+- password: String
+
+--
++ User(String, String, String, String)
++ calulateExpenses() : Integer
++ addExpense(Expense): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>624</x><y>132</y><w>252</w><h>132</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+PaymentMethod
+--
+_+ CASH_
+_+ CREDIT_
+_+ DEBIT_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>372</x><y>432</y><w>228</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..n
+
+- expenses</panel_attributes><additional_attributes>170;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>756</x><y>252</y><w>156</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+m1=1..1
+
+- paymentMethod</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element></diagram>
