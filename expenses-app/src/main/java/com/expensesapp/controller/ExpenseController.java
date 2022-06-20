@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.expensesapp.dto.ExpenseDTO;
 import com.expensesapp.entity.Expense;
+import com.expensesapp.mapper.ExpenseMapper;
 import com.expensesapp.service.ExpenseService;
 
 @RestController
@@ -17,9 +19,13 @@ public class ExpenseController {
 	@Autowired
 	private ExpenseService expenseService;
 
+	@Autowired
+	private ExpenseMapper expenseMapper;
+
 	@GetMapping
-	public List<Expense> getExpenses() {
-		return expenseService.getExpenses();
+	public List<ExpenseDTO> getExpenses() {
+		List<Expense> expenses = expenseService.getExpenses();
+		return expenseMapper.convertToDTOList(expenses);
 	}
 
 }

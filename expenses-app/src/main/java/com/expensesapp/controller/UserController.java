@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.expensesapp.entity.User;
+import com.expensesapp.mapper.ExpenseMapper;
 import com.expensesapp.service.UserService;
 
 @RestController
@@ -23,6 +24,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private ExpenseMapper expenseMapper;
 
 	@PostMapping("/user")
 	public User createUser(@RequestBody User user) {
